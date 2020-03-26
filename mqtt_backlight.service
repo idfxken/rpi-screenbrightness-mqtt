@@ -1,0 +1,14 @@
+[Unit]
+Description=DHT MQTT Daemon
+After=network-online.target
+
+
+[Service]
+Type=simple
+User=mqtt_backlight # needs udev rules - else use root 
+WorkingDirectory=/opt/mqtt_backlight
+ExecStartPre=/bin/sleep 30
+ExecStart=/opt/mqtt_backlight/mqtt_backlight.py
+
+[Install]
+WantedBy=multi-user.target
