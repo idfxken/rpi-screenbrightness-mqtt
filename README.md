@@ -8,19 +8,13 @@ state of power and brightness every 10 seconds.
 
 ## How to install:
 
-1. clone this repository to your raspberry pi  
-`git clone https://github.com/tofuSCHNITZEL/rpi-screenbrightness-mqtt`
-2. run installer  
-`sudo ./rpi-screenbrightness-mqtt/install.sh`
-3. edit config and enter your mqtt broker info and optional change the control and state topics  
-`sudo nano /etc/rpi_screenbrightness_mqtt.conf`
-
+1. clone this repository to a folder (e.g. /opt/mqtt_backlight)
+2. install service file into /etc/systemd/system/mqtt_backlight.service
+3. make the mqtt_backlight file executable for the user running the service
 
 ## Trouble shooting
 * to enable debug output set "debug" to True or 1 in `/etc/rpi_screenbrightness_mqtt.conf`  
-you can find the logs in `/var/log/supervisor/` and you could use `sudo tail -f /var/log/supervisor/rpi_screenbrightness_mqtt-std*` to display current log
-* you can check the status with `sudo supervisorctl status rpi_screenbrightness_mqtt` or 
-restart the service with ` sudo supervisorctl restart rpi_screenbrightness_mqtt` 
+* check journalctl 
 
 ### Home Assistant config example
 
