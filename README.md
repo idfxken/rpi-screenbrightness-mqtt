@@ -8,6 +8,9 @@ state of power and brightness every 10 seconds.
 
 ## How to install:
 
+Install deb packages: apt install python3-pip
+Install python packages: pip3 install paho_mqtt rpi_backlight
+
 1. clone this repository to a folder (e.g. /opt/mqtt_backlight)
 2. install service file into /etc/systemd/system/mqtt_backlight.service
 3. make the mqtt_backlight file executable for the user running the service
